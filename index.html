@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -23,11 +22,9 @@ h1,h2,h3,h4,.serif{font-family:'Noto Serif JP',serif}
 .mono{font-family:'JetBrains Mono',monospace}
 a{color:var(--jade-dark)}
 
-/* ============ LAYOUT SHELL ============ */
 .shell{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
 @media(max-width:900px){.shell{grid-template-columns:1fr}}
 
-/* ---- sidebar ---- */
 aside{
   position:sticky;top:0;height:100vh;overflow-y:auto;
   background:var(--ink);color:var(--paper);
@@ -63,7 +60,6 @@ aside nav button .n{font-family:'JetBrains Mono',monospace;font-size:10px;color:
 .spine .st small{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;color:#7E8890}
 .side-foot{font-size:10.5px;color:#6E7880;margin-top:20px;line-height:1.5}
 
-/* mobile header/nav override — precisa vir DEPOIS das regras base acima pra vencer no cascade */
 @media(max-width:900px){
   aside{
     position:sticky;top:0;height:auto;overflow:visible;z-index:60;
@@ -86,7 +82,6 @@ aside nav button .n{font-family:'JetBrains Mono',monospace;font-size:10px;color:
   aside nav button .n{display:none}
 }
 
-/* ---- main ---- */
 main{padding:44px clamp(20px,4vw,56px) 110px;max-width:1060px}
 section{display:none}
 section.active{display:block;animation:fade .35s ease}
@@ -96,7 +91,6 @@ section.active{display:block;animation:fade .35s ease}
 section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;letter-spacing:-.01em}
 .lede{color:var(--muted);font-size:14.5px;max-width:660px;margin:0 0 30px}
 
-/* ---- cards & chips ---- */
 .grid{display:grid;gap:14px}
 .g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
@@ -109,13 +103,11 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
 .chip.cn{background:var(--china-soft);color:var(--china-dark)}
 .chip.jp{background:var(--japan-soft);color:var(--japan-dark)}
 
-/* ---- stats hero row ---- */
 .stat-row{display:flex;flex-wrap:wrap;gap:28px;padding:22px 0 28px;border-bottom:1px solid var(--line);margin-bottom:30px}
 .stat .num{font-family:'Noto Serif JP',serif;font-weight:900;font-size:27px;color:var(--jade-dark)}
 .stat.hot .num{color:var(--china)}
 .stat .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
 
-/* ---- chapter headers ---- */
 .chapter{
   display:flex;align-items:baseline;gap:16px;margin:52px 0 6px;
   padding-bottom:10px;border-bottom:2px solid var(--line);
@@ -128,7 +120,6 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
 .chapter.jp{border-color:var(--japan)}.chapter.jp .glyph{color:var(--japan)}
 .chapter-note{font-size:13px;color:var(--muted);margin:8px 0 22px;max-width:680px}
 
-/* ---- day cards ---- */
 .day{
   display:grid;grid-template-columns:72px 1fr;gap:20px;
   padding:24px 0;border-bottom:1px solid var(--line);
@@ -149,6 +140,11 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
   padding:10px 15px;margin-bottom:12px;border-radius:0 8px 8px 0;
 }
 .dtip .ic{font-style:normal;color:var(--gold);margin-right:6px}
+.dupdate{
+  font-size:12.5px;line-height:1.65;color:#7A5A1E;background:var(--gold-soft);
+  border-left:2px solid var(--gold);padding:10px 15px;margin-bottom:12px;border-radius:0 8px 8px 0;
+}
+.dupdate b{color:#5C4014}
 .dextra{
   font-size:12.5px;color:var(--muted);border:1px dashed var(--line);
   border-radius:8px;padding:10px 15px;line-height:1.65;margin-bottom:12px;
@@ -161,7 +157,7 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
   padding:5px 12px;border-radius:20px;text-decoration:none;transition:.15s;
 }
 .blink:hover{background:#D3E8DF;border-color:var(--jade)}
-.blink.done{background:var(--paper2);color:var(--muted);border-color:var(--line);text-decoration:line-through}
+.blink.done{background:var(--paper2);color:var(--muted);border-color:var(--line)}
 .dmaps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:12px}
 .dmap{border-radius:9px;overflow:hidden;border:1px solid var(--line)}
 .dmap .ml{font-size:11px;font-weight:600;color:var(--muted);background:var(--paper2);padding:5px 11px}
@@ -173,8 +169,8 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
 .stamp.ok{background:var(--jade-soft);color:var(--jade-dark)}
 .stamp.new{background:var(--japan-soft);color:var(--japan-dark)}
 .stamp.att{background:var(--china-soft);color:var(--china-dark)}
+.stamp.wait{background:var(--gold-soft);color:#7A5A1E}
 
-/* ---- hotels tab ---- */
 .hotel{
   background:var(--card);border:1px solid var(--line);border-radius:14px;
   padding:24px 26px;margin-bottom:18px;
@@ -191,8 +187,9 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
 .hotel .hprice .per{font-size:11px;color:var(--muted)}
 .hotel .halt{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;margin-top:6px;grid-column:1/-1}
 .hotel .halt b{color:var(--ink)}
+.hotel .hupdate{font-size:12.5px;color:#7A5A1E;background:var(--gold-soft);border-radius:8px;padding:10px 13px;grid-column:1/-1;line-height:1.6}
+.hotel .hupdate b{color:#5C4014}
 
-/* ---- calendar ---- */
 .cal-legend{display:flex;gap:16px;margin-bottom:22px;font-size:12px;color:var(--muted);flex-wrap:wrap}
 .cal-legend span{display:flex;align-items:center;gap:6px}
 .cal-dot{width:9px;height:9px;border-radius:50%;display:inline-block}
@@ -217,7 +214,6 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
 .cal-cell.act.tr{background:var(--gold-soft);border-color:var(--gold)}
 .cal-cell.act.tr .cal-num{color:#7A5A1E}
 
-/* ---- gantt ---- */
 .gantt-wrap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;overflow-x:auto}
 .gantt-axis,.gantt-row{display:grid;gap:2px;min-width:880px}
 .gantt-axis{margin-bottom:8px}
@@ -227,7 +223,6 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
 .gantt-tk{display:grid;gap:2px;height:30px}
 .gantt-bar{border-radius:5px;border:1.5px solid;font-size:10.5px;font-weight:600;display:flex;align-items:center;padding:0 8px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 
-/* ---- budget ---- */
 .bar-row{display:flex;align-items:center;gap:12px;margin-bottom:9px}
 .bar-lb{width:170px;font-size:12.5px;flex:0 0 auto}
 .bar-tk{flex:1;height:9px;background:var(--paper2);border-radius:6px;overflow:hidden}
@@ -238,7 +233,6 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
 .total-banner .tv{font-family:'Noto Serif JP',serif;font-size:27px;font-weight:900}
 .saving{background:var(--jade-soft);border:1px solid #C8DFD6;border-radius:10px;padding:13px 17px;font-size:13px;color:var(--jade-dark);margin-top:14px}
 
-/* ---- checklist ---- */
 .ck-cat{margin-bottom:26px}
 .ck-cat h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--china);margin:0 0 10px}
 .ck-item{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px;cursor:pointer}
@@ -262,7 +256,6 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
   .stat-row{gap:12px 24px;padding:14px 0 18px;margin-bottom:22px}
   .stat .num{font-size:20px}
   .stat .lbl{font-size:10px}
-  /* dias: empilhar data acima do conteúdo */
   .day{grid-template-columns:1fr;gap:8px;padding:20px 0}
   .dcol{display:flex;gap:8px;align-items:baseline;text-align:left}
   .dbody{padding-left:15px}
@@ -271,31 +264,26 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
   .dtip{font-size:12.5px;padding:9px 12px}
   .dextra{font-size:12px;padding:9px 12px}
   .dmap iframe{height:150px}
-  /* capítulos: datas descem pra 2ª linha */
   .chapter{flex-wrap:wrap;gap:6px 12px;margin:40px 0 6px}
   .chapter .glyph{font-size:27px}
   .chapter h3{font-size:17px}
   .chapter .dates{margin-left:0;flex:1 0 100%;font-size:11px}
-  /* orçamento: barras respiram */
   .bar-lb{width:112px;font-size:11px;line-height:1.35}
   .bar-vl{width:70px;font-size:11px}
   .total-banner{padding:18px 20px}
   .total-banner .tv{font-size:21px}
   .saving{font-size:12px}
-  /* hotéis */
   .hotel{padding:18px 18px}
   .hotel h3{font-size:16px}
   .hotel .hwhy{font-size:13px}
-  /* checklist */
   .ck-item{font-size:12.8px}
   .ck-when{font-size:10px;padding-left:8px}
-  /* gantt: mantém scroll horizontal, rótulos menores */
   .gantt-lb{font-size:10.5px}
   #routeMap{height:250px}
 }
 @media print{aside{display:none}.shell{grid-template-columns:1fr}section{display:block !important}.dmaps,#routeMap{display:none}}
 </style>
-</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script></head>
 <body>
 <div class="shell">
 <aside>
@@ -303,25 +291,23 @@ section>h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;margin:0 0 8px;lette
     <h1>China + Japão</h1>
     <div class="side-sub">28 AGO — 14 SET 2026 · 2 VIAJANTES</div>
   </div>
-  <div class="countdown"><b id="cdNum">—</b><span id="cdLbl">dias para o embarque</span></div>
+  <div class="countdown"><b id="cdNum">4</b><span id="cdLbl">dias para o embarque</span></div>
   <nav id="sideNav"></nav>
   <div class="spine" id="spine"></div>
-  <div class="side-foot">Voos internacionais emitidos · seguro AIG/Visa ativo · salas VIP Visa & Bradesco</div>
+  <div class="side-foot">Voos + hotéis + seguro confirmados · Zhangjiajie em negociação final com o Borrman (Scott) · atualizado após retorno dos hotéis via WhatsApp</div>
 </aside>
-
 <main id="main"></main>
 </div>
 
 <script>
-/* ================= DATA ================= */
 const DEPART = new Date(2026,7,28);
 
 const chapters = [
  {id:'pro', cls:'tr', glyph:'発', title:'Travessia', dates:'28–29 ago', note:'Duas noites em trânsito. A regra aqui é uma só: gastar o mínimo de energia. Sala VIP em Dubai (Visa/Bradesco), banho, comida de verdade e chegar em Pequim inteiro.'},
  {id:'bj', cls:'cn', glyph:'一', title:'Pequim — a China imperial', dates:'30 ago – 02 set', note:'Quatro dias na capital dos imperadores. O segredo de Pequim é o horário: os locais vivem a cidade entre 6h e 9h — tai chi no Templo do Céu, café da manhã de jianbing na rua. Quem chega às 10h vê só a fila.'},
- {id:'zjj', cls:'cn', glyph:'二', title:'Zhangjiajie — as montanhas de Avatar', dates:'02 – 06 set', note:'O coração natural da viagem, em território do povo Tujia — minoria étnica com culinária e música próprias. Base em Wulingyuan (entrada do parque), última noite na cidade aos pés da Tianmen. Timing a seu favor: as aulas chinesas recomeçam em 1º de setembro — vocês pegam o parque logo depois do êxodo das famílias, com filas visivelmente menores que em agosto.'},
+ {id:'zjj', cls:'cn', glyph:'二', title:'Zhangjiajie — as montanhas de Avatar', dates:'02 – 06 set', note:'O coração natural da viagem, em território do povo Tujia — minoria étnica com culinária e música próprias. Base em Wulingyuan (entrada do parque), última noite na cidade aos pés da Tianmen. Ingressos e transporte sendo organizados diretamente com o butler do Borrman (Scott), via WhatsApp — quase todos os preços já confirmados.'},
  {id:'sz', cls:'cn', glyph:'三', title:'Shenzhen — a China do futuro', dates:'06 – 08 set', note:'De vila de pescadores a metrópole de 17 milhões em 40 anos. Dois dias: um para a cidade-laboratório (Huaqiangbei, Ping An), meio para respirar antes do Japão.'},
- {id:'tk', cls:'jp', glyph:'四', title:'Tóquio — do Edo ao neon', dates:'08 – 13 set', note:'Base no lado leste (Ueno/Asakusa): é o Tóquio antigo, mais barato, e — detalhe que quase ninguém percebe — a linha Asakusa tem trem direto para os DOIS aeroportos, Haneda na chegada e Narita na saída.'},
+ {id:'tk', cls:'jp', glyph:'四', title:'Tóquio — do Edo ao neon', dates:'08 – 13 set', note:'Base no lado leste (Ueno/Asakusa): é o Tóquio antigo, mais barato, e a linha Asakusa tem trem direto para os DOIS aeroportos. Atenção: o hotel confirmou que NÃO oferece transfer do aeroporto — chegada será de táxi ou app.'},
  {id:'epi', cls:'tr', glyph:'帰', title:'Retorno', dates:'13–14 set', note:'Bilhete único LATAM/Qatar já confirmado — conexão em Doha protegida. Última sala VIP e 14h35 até casa.'},
 ];
 
@@ -336,132 +322,154 @@ const roteiro = [
   tip:'DXB Terminal 3 é o maior terminal do mundo dedicado a uma companhia. Se quiser esticar as pernas, o trem interno entre os concourses é um passeio por si só — e de graça.',
   map:[{n:'Dubai International T3',q:'Dubai International Airport Terminal 3'}]},
 
- {ch:'bj',d:'30/08',w:'dom',cls:'cn',city:'Chegada em Pequim',stamp:'ok',
+ {ch:'bj',d:'30/08',w:'dom',cls:'cn',city:'Chegada em Pequim',stamp:'att',
   prog:'Pouso 15:25 (EK306). Transfer, check-in, e caminhada leve por Wangfujing pra vencer o fuso. Jantar cedo, dormir cedo.',
-  tip:'Primeira lição cultural: na China quase ninguém diz "não" diretamente — um "talvez" ou mudança de assunto significa não. No check-in, pegue DOIS cartões do hotel com endereço em chinês: é o que você mostra ao taxista a viagem inteira (um na sua carteira, um na da sua mãe). E o jantar de pato laqueado fica pra amanhã: hoje o corpo manda.',
-  links:[{t:'Hotel Pequim — Sunworld Dynasty (30/08–02/09)',u:'https://www.booking.com/searchresults.html?ss=Sunworld+Dynasty+Hotel+Beijing&checkin=2026-08-30&checkout=2026-09-02&group_adults=2'}],
+  tip:'Primeira lição cultural: na China quase ninguém diz "não" diretamente — um "talvez" ou mudança de assunto significa não. No check-in, pegue DOIS cartões do hotel com endereço em chinês: é o que você mostra ao taxista a viagem inteira.',
+  update:'O Sunworld Dynasty cotou o transfer de chegada em 450 CNY. Decisão tomada: vamos de DiDi em vez do transfer do hotel (mais barato pra 2 pessoas com bagagem). Baixar e testar o app antes de embarcar.',
+  links:[{t:'Hotel Pequim — Sunworld Dynasty (30/08–02/09) — reservado',u:'https://www.booking.com/searchresults.html?ss=Sunworld+Dynasty+Hotel+Beijing&checkin=2026-08-30&checkout=2026-09-02&group_adults=2'}],
   map:[{n:'Wangfujing',q:'Wangfujing Street Beijing'}]},
  {ch:'bj',d:'31/08',w:'seg',cls:'cn',city:'O ritmo da cidade velha',stamp:'ok',
   prog:'7h: Templo do Céu — tai chi, leques, calistenia dos aposentados: o melhor teatro gratuito de Pequim. Depois Hutongs de Wudaoying/Guozijian (mais autênticos que Nanluoguxiang) + Templo dos Lamas.',
   tip:'Café da manhã como local: jianbing (crepe de rua) comprado na chapa, ¥8. No Templo dos Lamas o incenso é grátis na entrada — três varetas, três reverências, mesmo pra quem não reza: é gesto de respeito, não de fé.',
-  extra:'À noite: jantar de pato laqueado no Siji Minfu (filial da Cidade Proibida) — peça pro concierge reservar HOJE pra amanhã ou depois; sem reserva a fila passa de 1h. Depois, se houver fôlego: lagos de Shichahai/Houhai, onde os pequineses dançam em roda na beira d\'água ao entardecer.',
-  links:[{t:'Ingresso Templo do Céu',u:'https://www.trip.com'},{t:'Ingresso Templo dos Lamas',u:'https://www.klook.com'}],
+  extra:'À noite: jantar de pato laqueado no Siji Minfu (filial da Cidade Proibida) — peça pro concierge reservar HOJE pra amanhã ou depois; sem reserva a fila passa de 1h. Depois, se houver fôlego: lagos de Shichahai/Houhai.',
+  links:[{t:'Ingresso Templo do Céu — ainda não comprado',u:'https://www.trip.com'},{t:'Ingresso Templo dos Lamas — ainda não comprado',u:'https://www.klook.com'}],
   map:[{n:'Templo do Céu',q:'Temple of Heaven Beijing'},{n:'Templo dos Lamas',q:'Yonghe Temple Beijing'}]},
  {ch:'bj',d:'01/09',w:'ter',cls:'cn',city:'A Muralha em Mutianyu',stamp:'ok',
-  prog:'Sair 7h (peça cotação do motorista privado ao concierge do Sunworld antes de fechar excursão — pra 2 pessoas costuma empatar). Teleférico sobe, tobogã desce.',
+  prog:'Excursão de 1 dia com teleférico e tobogã já comprada. Saída na manhã de 1/09.',
   tip:'Na muralha, vá pra OESTE das torres 14–20: 90% dos grupos vão pro leste. Meia hora de caminhada e você tem trechos praticamente vazios — a foto sem ninguém existe, só depende da direção.',
-  links:[{t:'Excursão/transporte Mutianyu',u:'https://www.getyourguide.com'}],
+  update:'✓ Comprado via Trip.com — US$136,24 total (2 pessoas), reserva nº 1207314711241973. Inclui teleférico + tobogã, com opção de pickup privado sem paradas de compras.',
+  links:[{t:'✓ Excursão Mutianyu — comprada (Trip.com)',u:'https://www.trip.com'}],
   map:[{n:'Muralha — Mutianyu',q:'Mutianyu Great Wall'}]},
  {ch:'bj',d:'02/09',w:'qua',cls:'cn',city:'Cidade Proibida → voo p/ Zhangjiajie',stamp:'att',
   prog:'Manhã: Cidade Proibida (slot reservado) no sentido sul→norte + Praça da Paz Celestial + subida do Jingshan pra vista aérea do palácio. Tarde: Palácio de Verão (Longo Corredor + lago Kunming). Noite: voo PEK/PKX → DYG.',
-  tip:'A Cidade Proibida foi desenhada pra ser percorrida como uma narrativa: cada pátio é maior e mais íntimo que o anterior. Não corra os primeiros — o clímax (jardins do norte) recompensa quem chega com calma. Late check-out + guarda-volumes resolvem a logística do voo noturno. ATENÇÃO na compra do voo: Pequim tem DOIS aeroportos — prefira partida de PEK (Capital, ~35 min de Wangfujing) e evite PKX (Daxing, 50 km ao sul, 1h+ de carro). A diferença de tarifa raramente compensa o trajeto.',
-  links:[{t:'Cidade Proibida — abre 26/08, 20h de Pequim (site oficial)',u:'https://bookingticket.dpm.org.cn'},{t:'Ingresso Palácio de Verão',u:'https://www.trip.com'},{t:'Hotel Wulingyuan (02–05/09, pedir transfer)',u:'https://www.booking.com/searchresults.html?ss=Wulingyuan+Zhangjiajie&checkin=2026-09-02&checkout=2026-09-05&group_adults=2'},{t:'Voo PEK→DYG (noite)',u:'https://www.trip.com/flights/beijing-to-zhangjiajie/tickets-pek-dyg/'}],
+  tip:'A Cidade Proibida foi desenhada pra ser percorrida como uma narrativa: cada pátio é maior e mais íntimo que o anterior. Late check-out + guarda-volumes resolvem a logística do voo noturno.',
+  update:'⏰ ALARME: ingresso abre 26/08 às 20h de Pequim (09h de Brasília) — esgota em minutos. Ainda não comprado.',
+  links:[{t:'Cidade Proibida — abre 26/08, 20h Pequim (site oficial)',u:'https://bookingticket.dpm.org.cn'},{t:'Ingresso Palácio de Verão — ainda não comprado',u:'https://www.trip.com'},{t:'✓ Voo PEK→DYG — comprado (Trip.com)',u:'https://www.trip.com'}],
   map:[{n:'Cidade Proibida',q:'Forbidden City Beijing'},{n:'Palácio de Verão',q:'Summer Palace Beijing'}]},
 
- {ch:'zjj',d:'03/09',w:'qui',cls:'cn',city:'Parque Florestal — Yuanjiajie',stamp:'ok',
+ {ch:'zjj',d:'03/09',w:'qui',cls:'cn',city:'Parque Florestal — Yuanjiajie',stamp:'wait',
   prog:'Elevador Bailong (326m pela face do penhasco) logo cedo → Montanha Hallelujah → Primeira Ponte sob o Céu. Almoço simples dentro do parque.',
-  tip:'O butler do hotel resolve o maior atrito da região: ingressos chineses exigem cadastro que estrangeiro não consegue fazer sozinho pelo WeChat. Entregue os passaportes na véspera e deixe o hotel reservar — é serviço padrão nos hotéis de Wulingyuan, e é exatamente por isso que a escolha do hotel importa aqui.',
-  links:[{t:'Ingresso Parque Florestal (multi-dia)',u:'https://www.klook.com'}],
+  tip:'O butler do hotel resolve o maior atrito da região: ingressos chineses exigem cadastro que estrangeiro não consegue fazer sozinho pelo WeChat. É exatamente por isso que a escolha do hotel importa aqui.',
+  update:'Preço confirmado com o Scott (Borrman): 510 CNY/pessoa pelo ingresso de 2 dias (elevador + teleférico ilimitado). Transporte até o portão sul: +120 CNY. Passaportes já enviados. Falta só o total final consolidado.',
+  links:[{t:'Ingresso Parque Florestal (multi-dia) — negociando com Borrman',u:'https://www.klook.com'}],
   map:[{n:'Yuanjiajie',q:'Zhangjiajie National Forest Park Yuanjiajie'}]},
- {ch:'zjj',d:'04/09',w:'sex',cls:'cn',city:'Parque Florestal — Tianzi + vale',stamp:'new',
+ {ch:'zjj',d:'04/09',w:'sex',cls:'cn',city:'Parque Florestal — Tianzi + vale',stamp:'wait',
   prog:'Manhã: mirantes de Tianzi e Yangjiajie. Tarde: descida pro Riacho do Chicote Dourado — caminhada plana de 3h no fundo do vale, com os pilares vistos de baixo.',
-  tip:'À noite, a experiência Tujia que quase todo estrangeiro perde: o espetáculo Charm Xiangxi em Wulingyuan — música, dança e o famoso "pulo da faca" da cultura local. E no jantar, peça san xia guo (panela três-em-um Tujia) ou sopa de peixe azedo: é a cozinha da etnia da região, não a chinesa genérica.',
+  tip:'À noite, a experiência Tujia que quase todo estrangeiro perde: o espetáculo Charm Xiangxi em Wulingyuan — música, dança e o famoso "pulo da faca" da cultura local.',
+  update:'Charm Xiangxi confirmado: 178 CNY/pessoa no assento mais barato (o pedido feito ao Scott). Falta só a confirmação final de pagamento.',
   extra:'Plano B pra chuva/neblina: Caverna do Dragão Amarelo ou passeio de barco no Lago Baofeng, com cantoria tradicional nas margens.',
   map:[{n:'Riacho do Chicote Dourado',q:'Golden Whip Stream Zhangjiajie'}]},
- {ch:'zjj',d:'05/09',w:'sáb',cls:'cn',city:'Ponte de Vidro → troca pra cidade',stamp:'att',
+ {ch:'zjj',d:'05/09',w:'sáb',cls:'cn',city:'Ponte de Vidro → troca pra cidade',stamp:'wait',
   prog:'Manhã: Ponte de Vidro do Grand Canyon (horário marcado, ~25 min de Wulingyuan). Tarde: check-out, transfer pra cidade de Zhangjiajie (~50 min), check-in perto da estação do teleférico da Tianmen.',
-  tip:'Reserve o slot da ponte pro início da manhã — libera a tarde pra troca de hotel sem correria. À noite na cidade: o distrito dos 72 Edifícios Estranhos (Qilou), arquitetura Tujia reimaginada com iluminação noturna — kitsch assumido, mas divertido de verdade.',
-  links:[{t:'Ingresso Ponte de Vidro (horário marcado)',u:'https://www.klook.com'},{t:'Hotel cidade — perto do teleférico Tianmen (05–06/09)',u:'https://www.booking.com/searchresults.html?ss=Zhangjiajie+Tianmen+Mountain+cableway&checkin=2026-09-05&checkout=2026-09-06&group_adults=2'}],
+  tip:'Reserve o slot da ponte pro início da manhã — libera a tarde pra troca de hotel sem correria. À noite na cidade: o distrito dos 72 Edifícios Estranhos (Qilou).',
+  update:'Confirmado com o Scott: os 280 CNY/pessoa do Grand Canyon JÁ incluem a travessia da Ponte de Vidro — sem custo adicional. Transporte hotel↔Grand Canyon: 240 CNY (carro). Opção de ir direto pro Hilton em vez de voltar ao Borrman: +100 CNY — vale a pena, evita organizar transporte próprio nesse dia.',
+  links:[{t:'Ingresso Ponte de Vidro — incluso no Grand Canyon (Borrman)',u:'https://www.klook.com'},{t:'Hotel cidade — Hilton Garden Inn Tianmen (05–06/09) — reservado',u:'https://www.booking.com/searchresults.html?ss=Zhangjiajie+Tianmen+Mountain+cableway&checkin=2026-09-05&checkout=2026-09-06&group_adults=2'}],
   map:[{n:'Ponte de Vidro',q:'Zhangjiajie Grand Canyon Glass Bridge'},{n:'72 Edifícios Estranhos',q:'72 Qilou Zhangjiajie'}]},
- {ch:'zjj',d:'06/09',w:'dom',cls:'cn',city:'Tianmen → voo p/ Shenzhen',stamp:'ok',
+ {ch:'zjj',d:'06/09',w:'dom',cls:'cn',city:'Tianmen → voo p/ Shenzhen',stamp:'att',
   prog:'Teleférico mais longo do mundo (28 min) logo na 1ª saída → Skywalk de vidro → Portão do Céu. Tarde: voo DYG → SZX.',
-  tip:'Ao comprar, escolha a rota B: sobe de teleférico e desce de ônibus pela Estrada das 99 Curvas — é a que menos exige escada, decisão que importa pros 999 degraus do Portão (que dá pra ver de baixo sem subir). O hotel fica a passos da estação: madrugar aqui é fácil.',
-  links:[{t:'Ingresso Tianmen — escolher ROTA B',u:'https://www.klook.com'},{t:'Hotel Shenzhen — Futian (06–08/09)',u:'https://www.booking.com/searchresults.html?ss=Shenzhen+Futian&checkin=2026-09-06&checkout=2026-09-08&group_adults=2'},{t:'Voo DYG→SZX (tarde)',u:'https://www.trip.com/flights/zhangjiajie-to-shenzhen/tickets-dyg-szx/'}],
+  tip:'O hotel (Hilton Garden Inn) fica a poucos passos da estação do teleférico — madrugar aqui é fácil, sem depender de carro nenhum.',
+  update:'Pendente de resposta: o Scott cotou 120 CNY de transporte até Tianmen, mas como já estaremos hospedados a poucos passos da estação (Hilton), perguntamos se esse valor realmente se aplica — provavelmente é dispensável.',
+  links:[{t:'✓ Voo DYG→SZX — comprado (Trip.com)',u:'https://www.trip.com'}],
   map:[{n:'Montanha Tianmen',q:'Tianmen Mountain Zhangjiajie'}]},
 
  {ch:'sz',d:'07/09',w:'seg',cls:'cn',city:'Shenzhen em um dia cheio',stamp:'ok',
-  prog:'Manhã: dim sum num cha lou (casa de chá cantonesa — pedir há gáau e siu máai apontando pros carrinhos). Depois Huaqiangbei, o maior mercado de eletrônicos do planeta. Fim de tarde: Parque Lianhuashan — sobe até a estátua de Deng Xiaoping pro pôr do sol sobre o skyline que ele criou.',
-  tip:'Huaqiangbei tem etiqueta própria: o primeiro preço é convite, não oferta. Contraproposta de 40–50% é esperada e ninguém se ofende. E o simbolismo de Lianhuashan é real: os locais sobem pra "agradecer ao arquiteto" da cidade — é o lugar mais carregado de história recente da China.',
-  extra:'Se sobrar fôlego: OCT-LOFT — fábricas dos anos 80 viradas galerias e cafés, a Shenzhen com alma. Ou bate-volta a Hong Kong pela fronteira de Futian (confirme antes se sua entrada permite reentrada na China).',
+  prog:'Manhã: dim sum num cha lou (casa de chá cantonesa). Depois Huaqiangbei, o maior mercado de eletrônicos do planeta. Fim de tarde: Parque Lianhuashan — sobe até a estátua de Deng Xiaoping pro pôr do sol sobre o skyline.',
+  tip:'Huaqiangbei tem etiqueta própria: o primeiro preço é convite, não oferta. Contraproposta de 40–50% é esperada.',
+  extra:'Se sobrar fôlego: OCT-LOFT — fábricas dos anos 80 viradas galerias e cafés.',
   map:[{n:'Huaqiangbei',q:'Huaqiangbei Shenzhen'},{n:'Lianhuashan',q:'Lianhuashan Park Shenzhen'}]},
- {ch:'sz',d:'08/09',w:'ter',cls:'cn',city:'Manhã livre → voo p/ Tóquio',stamp:'att',
+ {ch:'sz',d:'08/09',w:'ter',cls:'cn',city:'Manhã livre → voo p/ Tóquio',stamp:'ok',
   prog:'Manhã leve (compras finais ou OCT-LOFT). Aeroporto 14h. ANA NH966, 17:00 → Haneda T2, 22:20. Bagagem: 2×23kg/pessoa confirmadas.',
-  tip:'Da chegada em Haneda: a linha Keikyu tem trem direto que vira linha Asakusa dentro da cidade — desce praticamente na porta do hotel no lado leste, sem baldeação, ~40 min. Último trem por volta da meia-noite: dá, mas sem enrolar no desembarque. Plano B: táxi (~¥7–8 mil).',
-  links:[{t:'Hotel Tóquio — Mitsui Garden Ueno (08–13/09, 5 noites)',u:'https://www.booking.com/searchresults.html?ss=Mitsui+Garden+Hotel+Ueno&checkin=2026-09-08&checkout=2026-09-13&group_adults=2'}],
+  tip:'Da chegada em Haneda: a linha Keikyu tem trem direto que vira linha Asakusa dentro da cidade — desce praticamente na porta do hotel no lado leste.',
+  update:'O Holiday Inn Shenzhen confirmou: late check-in (22:30–23:00) sem problema, sem necessidade de aviso extra. Taxi do aeroporto de Shenzhen até o hotel: 100–150 CNY se precisar.',
+  links:[{t:'Hotel Tóquio — Belmont Asakusabashi (08–13/09) — reservado',u:'https://www.booking.com/searchresults.html?ss=Belmont+Hotel+Asakusabashi&checkin=2026-09-08&checkout=2026-09-13&group_adults=2'}],
   map:[{n:'Haneda T2',q:'Haneda Airport Terminal 2'}]},
 
  {ch:'tk',d:'09/09',w:'qua',cls:'jp',city:'Asakusa e Ueno — o Tóquio de Edo',stamp:'ok',
-  prog:'7h: Sensō-ji quase vazio — o portão Kaminarimon e o pátio sem multidão só existem antes das 8h. Nakamise abre às 9h. Depois Parque Ueno + Museu Nacional de Tóquio (a maior coleção de arte japonesa do mundo).',
-  tip:'Ritual do templo: fumaça do caldeirão de incenso "puxada" pro corpo (dizem que cura onde toca), mão esquerda, mão direita e boca na fonte de purificação — nessa ordem. À noite: Hoppy Street, a rua de izakayas da velha guarda de Asakusa, guisado de motsu e cerveja no copo de vidro grosso.',
-  extra:'Se sobrar tarde: Yanaka Ginza, o bairro que sobreviveu à guerra e ao concreto — becos, gatos e lojinhas de bairro do século passado, a 10 min de Ueno.',
+  prog:'7h: Sensō-ji quase vazio. Nakamise abre às 9h. Depois Parque Ueno + Museu Nacional de Tóquio.',
+  tip:'Ritual do templo: fumaça do caldeirão de incenso "puxada" pro corpo, mão esquerda, mão direita e boca na fonte de purificação — nessa ordem.',
+  extra:'Se sobrar tarde: Yanaka Ginza, o bairro que sobreviveu à guerra e ao concreto.',
   map:[{n:'Sensō-ji',q:'Sensoji Temple Asakusa Tokyo'},{n:'Museu Nacional',q:'Tokyo National Museum'}]},
- {ch:'tk',d:'10/09',w:'qui',cls:'jp',city:'Meiji Jingu → Shibuya Sky',stamp:'ok',
-  prog:'Manhã: floresta do Meiji Jingu (100 mil árvores doadas de todo o Japão em 1920). Harajuku/Takeshita na saída. Tarde: Shibuya — Hachiko, o Crossing, e Shibuya Sky reservado pro pôr do sol.',
-  tip:'No torii do Meiji Jingu, os locais fazem uma reverência leve antes de passar — e caminham pelas laterais: o centro do caminho é "dos deuses". No Sky, o horário mágico é chegar 40 min antes do pôr do sol e ficar até a cidade acender.',
-  links:[{t:'Shibuya Sky — pôr do sol (esgota primeiro)',u:'https://www.shibuya-scramble-square.com/sky/'},{t:'teamLab Planets (opcional, data/hora marcada)',u:'https://www.teamlab.art/e/planets/'}],
+ {ch:'tk',d:'10/09',w:'qui',cls:'jp',city:'Meiji Jingu → Shibuya Sky',stamp:'att',
+  prog:'Manhã: floresta do Meiji Jingu. Harajuku/Takeshita na saída. Tarde: Shibuya — Hachiko, o Crossing, e Shibuya Sky reservado pro pôr do sol.',
+  tip:'No torii do Meiji Jingu, os locais fazem uma reverência leve antes de passar. No Sky, o horário mágico é chegar 40 min antes do pôr do sol.',
+  links:[{t:'Shibuya Sky — pôr do sol — ainda não comprado',u:'https://www.shibuya-scramble-square.com/sky/'},{t:'teamLab Planets (opcional) — ainda não comprado',u:'https://www.teamlab.art/e/planets/'}],
   map:[{n:'Meiji Jingu',q:'Meiji Jingu Tokyo'},{n:'Shibuya Crossing',q:'Shibuya Crossing Tokyo'}]},
- {ch:'tk',d:'11/09',w:'sex',cls:'jp',city:'Monte Fuji — Kawaguchi e Chureito',stamp:'ok',
+ {ch:'tk',d:'11/09',w:'sex',cls:'jp',city:'Monte Fuji — Kawaguchi e Chureito',stamp:'att',
   prog:'Excursão de dia inteiro: Lago Kawaguchi + Pagode Chureito (a vista clássica do Fuji com o pagode em primeiro plano).',
-  tip:'O Fuji aparece limpo em cerca de metade dos dias — cheque a previsão na véspera e, se fechar, troque por Hakone (que tem onsen e, com sorte, o Fuji por outro ângulo). Setembro ainda é fim da janela de calor: manhãs dão mais chance de céu aberto que tardes.',
-  extra:'Alternativa DIY que corta o custo pela metade: ônibus direto Shinjuku→Kawaguchiko (~¥2.200, 1h45, reservar em highwaybus.com) + trem local até Chureito. Mais barato e no seu ritmo — mas a excursão guiada poupa logística, o que tem valor viajando em dupla com a sua mãe. Decisão de estilo, não de certo/errado.',
-  links:[{t:'Excursão Monte Fuji (reservar 1 mês antes)',u:'https://www.klook.com'}],
+  tip:'O Fuji aparece limpo em cerca de metade dos dias — cheque a previsão na véspera. Setembro ainda é fim da janela de calor: manhãs dão mais chance de céu aberto que tardes.',
+  update:'Prioridade alta: horário marcado, risco real de esgotar dado o prazo curto. Ainda não comprado.',
+  extra:'Alternativa DIY que corta o custo pela metade: ônibus direto Shinjuku→Kawaguchiko (~¥2.200, 1h45) + trem local até Chureito.',
+  links:[{t:'Excursão Monte Fuji — ainda não comprado, reservar já',u:'https://www.klook.com'}],
   map:[{n:'Pagode Chureito',q:'Chureito Pagoda Fujiyoshida'}]},
  {ch:'tk',d:'12/09',w:'sáb',cls:'jp',city:'Tsukiji → Ginza → Akihabara → Shinjuku',stamp:'ok',
-  prog:'8h: café da manhã no Mercado Externo de Tsukiji (tamagoyaki na hora, uni, atum). Ginza a pé: passeie num depachika (subsolo gastronômico de loja de departamento — Mitsukoshi ou Matsuya). Tarde: Jardins Imperiais + Akihabara (tax-free com passaporte). Noite: Shinjuku — mirante gratuito do Governo Metropolitano, depois Omoide Yokocho.',
-  tip:'Omoide Yokocho ("beco das memórias") são 60 barracas do pós-guerra espremidas num corredor: yakitori na brasa, fumaça e balcões de 6 lugares. Sente onde houver banco livre, aponte pro que o vizinho come, e pague em dinheiro. É o Japão que os arranha-céus não apagaram.',
+  prog:'8h: café da manhã no Mercado Externo de Tsukiji. Ginza a pé. Tarde: Jardins Imperiais + Akihabara. Noite: Shinjuku — mirante gratuito, depois Omoide Yokocho.',
+  tip:'Omoide Yokocho são 60 barracas do pós-guerra espremidas num corredor: yakitori na brasa, fumaça e balcões de 6 lugares.',
   map:[{n:'Tsukiji',q:'Tsukiji Outer Market Tokyo'},{n:'Omoide Yokocho',q:'Omoide Yokocho Shinjuku'}]},
 
  {ch:'epi',d:'13/09',w:'dom',cls:'tr',city:'Tóquio → Doha',stamp:'ok',
   prog:'Check-out até 11h. De Ueno: Keisei Skyliner direto pra Narita (36–44 min). Voo LATAM/Qatar NRT→DOH 17:25.',
-  tip:'A vantagem escondida da base em Ueno aparece agora: o Skyliner sai de lá mesmo (¥2.570 no balcão — e-ticket via Klook sai ~¥2.300, comprável na véspera). Mais rápido e mais barato que o Narita Express do outro lado da cidade. Chegue no aeroporto 3h antes: Narita tem tax-refund e as últimas compras.',
+  tip:'A vantagem escondida da base em Ueno aparece agora: o Skyliner sai de lá mesmo. Chegue no aeroporto 3h antes.',
   links:[{t:'Keisei Skyliner — reservar assento',u:'https://www.keisei.co.jp/keisei/tetudou/skyliner/us/'}],
   map:[{n:'Aeroporto de Narita',q:'Narita International Airport'}]},
  {ch:'epi',d:'14/09',w:'seg',cls:'tr',city:'Doha → São Paulo',stamp:'ok',
   prog:'Conexão em Doha (mesmo bilhete YOMKTQ — protegida). Chegada em GRU 08:35. Total: 27h10 de porta a porta.',
-  tip:'Se a espera em Doha render, o Hamad International tem o urso gigante do Urs Fischer e boa praça de alimentação — e a última rodada de sala VIP Visa/Bradesco da viagem.',
+  tip:'Se a espera em Doha render, o Hamad International tem o urso gigante do Urs Fischer e boa praça de alimentação.',
   map:[{n:'Hamad International',q:'Hamad International Airport Doha'}]},
 ];
 
 const hoteis = [
  {city:'PEQUIM · 3 NOITES · 30/08–02/09', name:'Sunworld Dynasty Wangfujing', price:'R$ 2.197', per:'total (≈R$ 732/noite)',
-  why:'Mantido após reavaliação: sai ~37% abaixo da média dos 5★ de Pequim, fica a 2 min do metrô Jinyu Hutong (linha 8) e a 15 min a pé da Cidade Proibida. O concierge organiza motorista pra Muralha — pra 2 pessoas costuma empatar com excursão em grupo, sem o rebanho.',
-  meta:'Café incluso (pedir tarifa 含早) · cancelamento grátis · piscina coberta',
-  alt:'Alternativa com mais alma (e menos conforto): pátio tradicional tipo courtyard nos hutongs de Qianmen, ~US$ 90–110/noite — troca conveniência por atmosfera. Só vale se atmosfera pesar mais que localização.',
+  why:'A 2 min do metrô Jinyu Hutong (linha 8) e 15 min a pé da Cidade Proibida. Concierge respondeu e ofereceu transfer de chegada.',
+  meta:'Café incluso · cancelamento grátis · piscina coberta',
+  update:'Transfer do aeroporto cotado em 450 CNY — decidimos usar DiDi em vez disso. Ainda falta confirmar se a reserva já está paga ou se falta pagar no check-in.',
+  alt:'',
   link:'https://www.booking.com/searchresults.html?ss=Sunworld+Dynasty+Hotel+Beijing&checkin=2026-08-30&checkout=2026-09-02&group_adults=2'},
  {city:'ZHANGJIAJIE · 3 NOITES · 02–05/09 · WULINGYUAN', name:'Borrman Hotel (300m do Portão Leste)', price:'~R$ 220–280', per:'por noite',
-  why:'O critério aqui não é estrela — é o butler que fala inglês e reserva os ingressos por você. Atrações chinesas exigem cadastro em mini-programa que estrangeiro não acessa; hotéis como o Borrman (300m do portão, serviço de tickets) ou o Manyuan Resort (9.5/10, ~US$32) resolvem isso como rotina. Confirmar transfer do aeroporto na reserva: chegada às ~23h.',
-  meta:'Portão Leste a pé · butler em inglês · lavanderia (útil no meio da viagem)',
-  alt:'Alternativa de rede: Hilton Garden Inn Wulingyuan ou Pullman (5★, colado no portão + mercado noturno em frente) se preferir padrão internacional — pagando ~2× mais.',
+  why:'O butler (Scott, contato via WhatsApp) está organizando ingressos e transporte para os 4 dias inteiros em Zhangjiajie.',
+  meta:'Portão Leste a pé · butler em inglês (WhatsApp +86 158 0293 9330) · lavanderia',
+  update:'Negociação em andamento: Parque Florestal 510 CNY/pessoa, Grand Canyon 280 CNY/pessoa (inclui Ponte de Vidro), Charm Xiangxi 178 CNY/pessoa, transporte total ~630-730 CNY dependendo dos ajustes pendentes. Passaportes já enviados. Falta o total final consolidado antes de pagar.',
+  alt:'',
   link:'https://www.booking.com/searchresults.html?ss=Borrman+Hotel+Wulingyuan+Zhangjiajie&checkin=2026-09-02&checkout=2026-09-05&group_adults=2'},
- {city:'ZHANGJIAJIE · 1 NOITE · 05–06/09 · CIDADE', name:'Hampton by Hilton Tianmen Mountain', price:'~R$ 260–320', per:'por noite',
-  why:'Uma noite estratégica: o hotel fica a passos da estação inferior do teleférico da Tianmen — madruga na primeira cabine (menos fila, menos neblina) e depois segue direto pro aeroporto, que fica a 15–20 min. É a peça que faz a troca de hotel valer a pena.',
-  meta:'Ao lado do teleférico · perto do aeroporto DYG · café incluso padrão Hampton',
-  alt:'Mesma lógica, outro preço: Ramada (Tianmen Cable Car Station) ou Wyndham Garden Tianmen (~US$53).',
-  link:'https://www.booking.com/searchresults.html?ss=Hampton+by+Hilton+Zhangjiajie+Tianmen+Mountain&checkin=2026-09-05&checkout=2026-09-06&group_adults=2'},
- {city:'SHENZHEN · 2 NOITES · 06–08/09', name:'Futian, perto do metrô (Convention Center / Shopping Park)', price:'~R$ 450–650', per:'por noite (4★)',
-  why:'Futian é o centro de gravidade: Lianhuashan e Ping An a pé, Huaqiangbei a 2 estações, e linha direta pro aeroporto. Shenzhen tem excesso de oferta hoteleira — 4★ novo sai pelo preço de 3★ de outras capitais. Não pague por vista: você mal vai ficar no quarto.',
-  meta:'Metrô na porta · Huaqiangbei a 2 estações · linha 11 direto pro aeroporto',
-  alt:'Se preferir mar e calma: Nanshan/Sea World — mais bonito à noite, porém +20 min de metrô pra tudo do roteiro.',
+ {city:'ZHANGJIAJIE · 1 NOITE · 05–06/09 · CIDADE', name:'Hilton Garden Inn Tianmen Mountain', price:'R$ 484', per:'total (1 noite, 2 pessoas)',
+  why:'A poucos passos da estação do teleférico de Tianmen. Recusaram buscar no Borrman (distância/zona diferente), mas confirmaram que DiDi resolve bem esse trajeto.',
+  meta:'Ao lado do teleférico · check-in solicitado 15h-16h, aprovado',
+  update:'Também ofereceram ajuda com ingressos, mas já está sendo tratado com o Borrman — não é necessário duplicar.',
+  alt:'',
+  link:'https://www.booking.com/searchresults.html?ss=Hilton+Garden+Inn+Zhangjiajie+Tianmen+Mountain&checkin=2026-09-05&checkout=2026-09-06&group_adults=2'},
+ {city:'SHENZHEN · 2 NOITES · 06–08/09', name:'Holiday Inn Express Futian Center', price:'R$ 938', per:'total (2 noites, 2 pessoas)',
+  why:'Perto do metrô, Huaqiangbei a 2 estações, linha direta pro aeroporto.',
+  meta:'Metrô na porta · caução de CNY 500 na chegada (reembolsável)',
+  update:'Late check-in (22:30-23:00) confirmado sem problema. Taxi do aeroporto até o hotel: 100-150 CNY se precisar.',
+  alt:'',
   link:'https://www.booking.com/searchresults.html?ss=Shenzhen+Futian&checkin=2026-09-06&checkout=2026-09-08&group_adults=2'},
- {city:'TÓQUIO · 5 NOITES · 08–13/09', name:'Mitsui Garden Hotel Ueno', price:'~R$ 550–750', per:'por noite',
-  why:'Recomendação revista — mesma marca Mitsui, lado certo da cidade. Seu roteiro é todo no leste (Sensō-ji, Ueno, Akihabara, Tsukiji), e o lado leste é a zona de melhor custo-benefício de Tóquio em 2026. O trunfo logístico: chegada de Haneda por trem direto (linha Keikyu→Asakusa) e saída pra Narita pelo Keisei Skyliner que parte da própria Ueno — nenhum outro bairro serve os dois aeroportos assim.',
-  meta:'JR Ueno a 2 min · Skyliner p/ Narita na porta · check-in 24h (confirmar chegada ~23h30)',
-  alt:'Se preferir o Tóquio-neon: Shinjuku (lado oeste) é a escolha clássica de 1ª viagem — mas adiciona 30–40 min de deslocamento por dia no SEU roteiro específico, e o NEX pra Narita custa ¥3.070 vs ¥2.570 do Skyliner.',
-  link:'https://www.booking.com/searchresults.html?ss=Mitsui+Garden+Hotel+Ueno&checkin=2026-09-08&checkout=2026-09-13&group_adults=2'},
+ {city:'TÓQUIO · 5 NOITES · 08–13/09', name:'Tokyo Asakusabashi Belmont Hotel', price:'R$ 3.047', per:'total (5 noites, 2 pessoas)',
+  why:'Lado leste de Tóquio (Ueno/Asakusa), Skyliner pra Narita sai dali mesmo.',
+  meta:'2 min a pé da estação Asakusabashi · check-in 22h-23h aprovado',
+  update:'ATENÇÃO: o hotel confirmou que NÃO oferece shuttle nem transfer do aeroporto. Chegada em Haneda às 22:20 — será preciso pegar táxi na fila do aeroporto ou usar app (GO ou S.Ride, já que DiDi não opera no Japão). Tarifa estimada pelo próprio hotel: ~¥15.000 (~R$500) de madrugada.',
+  alt:'',
+  link:'https://www.booking.com/searchresults.html?ss=Belmont+Hotel+Asakusabashi&checkin=2026-09-08&checkout=2026-09-13&group_adults=2'},
 ];
 
 const orcamento = {
  lancado:[
-  ['Emirates GRU-DXB-PEK',12355.42],['Voo PEK→DYG (estim.)',1400],['Voo DYG→SZX (estim.)',1400],
+  ['Emirates GRU-DXB-PEK',12355.42],['Voo PEK→DYG',1400],['Voo DYG→SZX',1400],
   ['ANA SZX→HND',4985],['LATAM/Qatar NRT-DOH-GRU',12804.85],
-  ['Hotel Pequim',2197],['Hotel Wulingyuan (3n)',750],['Hotel Tianmen/cidade (1n)',300],
-  ['Hotel Shenzhen (2n)',1100],['Hotel Tóquio Ueno (5n)',3300],
+  ['Hotel Pequim',2197],['Hotel Wulingyuan (3n)',851],['Hotel Tianmen/cidade (1n)',484],
+  ['Hotel Shenzhen (2n)',938],['Hotel Tóquio Ueno (5n)',3047],
+  ['Muralha (Mutianyu) — comprado Trip.com',750],
  ],
  faltando:[
-  ['Ingressos Pequim',260],['Muralha (motorista/excursão)',1000],['Ingressos Zhangjiajie',1140],
-  ['Show Charm Xiangxi',280],['Transporte local Zhangjiajie',450],['Transporte local Pequim',400],
-  ['Transporte local Shenzhen',160],['Excursão Monte Fuji',1200],['Tóquio: Suica + Skyliner + metrô',760],
-  ['Shibuya Sky + teamLab',500],['Alimentação (17 dias)',6120],['eSIM Ásia',300],['Imprevistos e compras',1600],
+  ['Ingressos Pequim (Templo Céu, Lamas, Palácio Verão)',260],
+  ['Zhangjiajie — ingressos + transporte (Borrman, cotado)',2350],
+  ['Transporte local Pequim (DiDi, em vez de transfer do hotel)',250],
+  ['Transporte local Shenzhen (taxi aeroporto)',110],
+  ['Táxi aeroporto Tóquio (Belmont não tem shuttle)',500],
+  ['Excursão Monte Fuji',1200],
+  ['Tóquio: Suica + Skyliner + metrô',760],
+  ['Shibuya Sky + teamLab',500],
+  ['Alimentação (17 dias)',6120],
+  ['eSIM Ásia',300],
+  ['Imprevistos e compras',1600],
  ],
 };
 
@@ -472,17 +480,29 @@ const checklist = {
   ['Visit Japan Web (QR imigração)','1 sem. antes'],
   ['Cópias digitais + comprovantes impressos','1 sem. antes'],
  ],
- 'Reservas críticas':[
-  ['Hotel Pequim — Sunworld Dynasty','agora'],
-  ['Hotel Wulingyuan c/ transfer + butler','agora'],
-  ['Hotel cidade ZJJ (perto teleférico)','agora'],
-  ['Hotel Shenzhen — Futian','agora'],
-  ['Hotel Tóquio — Mitsui Garden Ueno','agora'],
-  ['Voos PEK→DYG e DYG→SZX','agora'],
+ 'Reservas — todas fechadas':[
+  ['Hotel Pequim — Sunworld Dynasty','OK'],
+  ['Hotel Wulingyuan — Borrman','OK'],
+  ['Hotel cidade ZJJ — Hilton Tianmen','OK'],
+  ['Hotel Shenzhen — Holiday Inn Futian','OK'],
+  ['Hotel Tóquio — Belmont Asakusabashi','OK'],
+  ['Voos internacionais (ida e volta)','OK'],
+  ['Voos domésticos PEK→DYG, DYG→SZX, SZX→HND','OK'],
+  ['Excursão Muralha (Mutianyu)','OK'],
+ ],
+ 'Zhangjiajie — fechando com o Borrman':[
+  ['Confirmar total final (tickets + transporte)','agora'],
+  ['Esclarecer se transporte p/ Tianmen (120 CNY) é necessário','agora'],
+  ['Enviar dados de passaporte ao Scott','feito'],
+  ['Confirmar forma de pagamento (antecipado ou na chegada)','agora'],
+ ],
+ 'Ingressos ainda não comprados':[
   ['Cidade Proibida — site oficial','26/08 · 20h Pequim'],
-  ['Tianmen ROTA B + Ponte de Vidro + parque','2 sem. antes'],
-  ['Shibuya Sky (pôr do sol) + teamLab','2 sem. antes'],
-  ['Monte Fuji + Muralha','1 mês antes'],
+  ['Templo do Céu','1 sem. antes'],
+  ['Templo dos Lamas','1 sem. antes'],
+  ['Palácio de Verão','1 sem. antes'],
+  ['Monte Fuji','2 sem. antes — prioridade alta'],
+  ['Shibuya Sky + teamLab','2 sem. antes'],
  ],
  'Pagamento':[
   ['Alipay + WeChat Pay testados no Brasil','antes de embarcar'],
@@ -490,28 +510,22 @@ const checklist = {
   ['Iene: sacar no ATM da 7-Eleven chegando','chegando'],
  ],
  'Conectividade':[
-  ['eSIM Ásia (só dados — manter chip BR ativo p/ SMS de banco)','1 sem. antes'],
-  ['Amap/Gaode instalado — Google Maps NÃO roteia na China, nem com VPN','antes de embarcar'],
-  ['VPN instalada e testada (backup pro que a eSIM não resolver)','antes de embarcar'],
-  ['Google Translate: pacotes offline de chinês e japonês','antes de embarcar'],
-  ['DiDi instalado','antes de embarcar'],
+  ['eSIM Ásia (só dados)','1 sem. antes'],
+  ['Amap/Gaode instalado — Google Maps NÃO roteia na China','antes de embarcar'],
+  ['VPN instalada e testada','antes de embarcar'],
+  ['DiDi instalado — vamos usar em Pequim e Zhangjiajie/cidade','antes de embarcar'],
+  ['App de táxi japonês (GO ou S.Ride) — necessário p/ chegada em Tóquio','antes de embarcar'],
   ['Suica/Pasmo no celular','antes de embarcar'],
  ],
  'Na China':[
-  ['Power bank: NÃO levar do Brasil (selo CCC obrigatório) — comprar/alugar lá','chegando em Pequim'],
-  ['Passaportes com o butler do hotel p/ ingressos','véspera de cada atração'],
-  ['Cartão do hotel em chinês na carteira (um pra cada)','todo check-in'],
+  ['Power bank: comprar/alugar lá (não trazer do Brasil)','chegando em Pequim'],
+  ['Cartão do hotel em chinês na carteira','todo check-in'],
  ],
  'Clima & saúde':[
-  ['Monitorar tufões (windy.com / JMA) — Shenzhen e Tóquio na rota','a partir de 01/09'],
+  ['Monitorar tufões (windy.com / JMA)','a partir de 01/09'],
   ['Meias de compressão pros voos de 12–14h','1 sem. antes'],
-  ['Protetor solar + garrafa d\'água (Muralha e ZJJ têm pouca sombra)','na mala'],
+  ['Protetor solar + garrafa d\'água','na mala'],
   ['Água da torneira: NÃO na China, ok no Japão','lembrar'],
- ],
- 'Etiqueta expressa':[
-  ['Gorjeta: não existe na China; no Japão pode até ofender','lembrar'],
-  ['Japão: dinheiro vai na bandejinha, não na mão do caixa','lembrar'],
-  ['Japão: não comer andando em rua movimentada; fila é sagrada','lembrar'],
  ],
  'Emergência (salvar offline)':[
   ['China: polícia 110 · ambulância 120','no celular'],
@@ -521,7 +535,7 @@ const checklist = {
   ['Embaixada do Brasil em Tóquio: +81 3-3404-5211','no celular'],
  ],
  'Conforto':[
-  ['Check-in online dos 4 trechos na abertura','48/24h antes'],
+  ['Check-in online dos voos na abertura','48/24h antes'],
   ['Salas VIP Visa + Bradesco (Dubai e Doha)','disponível'],
   ['Adaptador de tomada (China A/I, Japão A)','1 sem. antes'],
  ],
@@ -532,14 +546,13 @@ const ganttRows=[
  {label:'Voos internacionais',c:'#9A948A',segs:[{f:'28/08',t:'29/08',x:'GRU→DXB→PEK'},{f:'13/09',t:'14/09',x:'NRT→DOH→GRU'}]},
  {label:'Pequim',c:'#B23A2C',segs:[{f:'30/08',t:'02/09',x:'Sunworld Dynasty'}]},
  {label:'Voo doméstico',c:'#9A948A',segs:[{f:'02/09',t:'02/09',x:'PEK→DYG'}]},
- {label:'Wulingyuan',c:'#B23A2C',segs:[{f:'02/09',t:'05/09',x:'Parque + Ponte'}]},
- {label:'ZJJ cidade',c:'#B23A2C',segs:[{f:'05/09',t:'06/09',x:'Tianmen'}]},
+ {label:'Wulingyuan',c:'#B23A2C',segs:[{f:'02/09',t:'05/09',x:'Borrman — negociando'}]},
+ {label:'ZJJ cidade',c:'#B23A2C',segs:[{f:'05/09',t:'06/09',x:'Hilton Tianmen'}]},
  {label:'Voo doméstico',c:'#9A948A',segs:[{f:'06/09',t:'06/09',x:'DYG→SZX'}]},
- {label:'Shenzhen',c:'#B98F3E',segs:[{f:'06/09',t:'08/09',x:'Futian'}]},
- {label:'Tóquio',c:'#2E4E78',segs:[{f:'08/09',t:'13/09',x:'Mitsui Garden Ueno'}]},
+ {label:'Shenzhen',c:'#B98F3E',segs:[{f:'06/09',t:'08/09',x:'Holiday Inn Futian'}]},
+ {label:'Tóquio',c:'#2E4E78',segs:[{f:'08/09',t:'13/09',x:'Belmont — sem transfer!'}]},
 ];
 
-/* ================= RENDER ================= */
 const fmt=n=>n.toLocaleString('pt-BR',{maximumFractionDigits:0});
 const tabs=[
  {id:'overview',n:'01',label:'Overview'},
@@ -569,44 +582,46 @@ const subtB=orcamento.faltando.reduce((a,[,v])=>a+v,0);
 function renderOverview(){return `
  <div class="kicker">Dossiê da viagem</div>
  <h2>17 dias, dois mundos</h2>
- <p class="lede">Da China imperial ao Japão de Edo, passando pelas montanhas que inspiraram Avatar e pela cidade mais nova do planeta. Voos internacionais emitidos e conferidos; o que resta é reservar bem — e este painel diz exatamente o quê, quando e por quê.</p>
+ <p class="lede">Voos, hotéis, seguro e a Muralha estão fechados. O que resta agora é: fechar o total final com o Borrman em Zhangjiajie, comprar Cidade Proibida (alarme 26/08) e Monte Fuji (prazo curto), e resolver o transporte do aeroporto em Tóquio, já que o Belmont não oferece transfer.</p>
  <div class="stat-row">
   <div class="stat"><div class="num">17</div><div class="lbl">dias</div></div>
   <div class="stat"><div class="num">4</div><div class="lbl">cidades</div></div>
-  <div class="stat hot"><div class="num">${5+2+8}</div><div class="lbl">reservas pendentes</div></div>
+  <div class="stat hot"><div class="num">7</div><div class="lbl">itens ainda em aberto</div></div>
   <div class="stat"><div class="num">R$ ${fmt(subtA+subtB)}</div><div class="lbl">orçamento total</div></div>
   <div class="stat"><div class="num">R$ ${fmt((subtA+subtB)/2)}</div><div class="lbl">por pessoa</div></div>
  </div>
  <div id="routeMap"></div>
  <div class="grid g3">
-  <div class="card"><span class="chip ok">garantido</span><h3>Base sólida</h3><p>3 voos internacionais emitidos (assentos juntos), seguro AIG/Visa ativo com US$175 mil de cobertura, salas VIP Visa e Bradesco nas duas conexões longas.</p></div>
-  <div class="card"><span class="chip warn">decisão-chave</span><h3>Hotéis com função, não só cama</h3><p>Em Wulingyuan o hotel reserva seus ingressos (estrangeiro não consegue sozinho). Em Tóquio, a base em Ueno conecta os dois aeroportos por trem direto. Ver aba Hotéis.</p></div>
-  <div class="card"><span class="chip cn">alarme</span><h3>26/08 · 09h de Brasília</h3><p>Ingresso da Cidade Proibida abre exatamente 7 dias antes (20h de Pequim) e esgota em minutos. Site oficial, e-mail + passaporte já cadastrados.</p></div>
+  <div class="card"><span class="chip ok">fechado</span><h3>Espinha dorsal da viagem</h3><p>Todos os 6 voos, os 5 hotéis e o seguro de viagem estão confirmados e pagos. A Muralha também já foi comprada.</p></div>
+  <div class="card"><span class="chip warn">em negociação</span><h3>Zhangjiajie com o Borrman</h3><p>Preços de quase tudo já confirmados via WhatsApp com o Scott. Falta só o total final consolidado e a forma de pagamento antes de fechar.</p></div>
+  <div class="card"><span class="chip cn">alarme</span><h3>26/08 · 09h de Brasília</h3><p>Ingresso da Cidade Proibida abre exatamente 7 dias antes e esgota em minutos.</p></div>
  </div>
  <h3 style="margin:34px 0 14px;font-size:16px">Próximas 3 ações</h3>
  <div class="grid g3">
-  <div class="card"><b>1.</b> Reservar os 5 hotéis (aba Hotéis tem o porquê de cada um)</div>
-  <div class="card"><b>2.</b> Comprar os voos PEK→DYG (noite 02/09) e DYG→SZX (tarde 06/09)</div>
-  <div class="card"><b>3.</b> Alarme 26/08, 09h Brasília — Cidade Proibida</div>
+  <div class="card"><b>1.</b> Fechar total final com o Scott (Borrman) e confirmar pagamento</div>
+  <div class="card"><b>2.</b> Alarme 26/08, 09h Brasília — Cidade Proibida</div>
+  <div class="card"><b>3.</b> Comprar Monte Fuji e instalar app de táxi japonês (GO/S.Ride)</div>
  </div>`;}
 
 function renderRoteiro(){
  let html=`<div class="kicker">Dia a dia</div><h2>Roteiro comentado</h2>
- <p class="lede">Organizado em capítulos. Cada dia traz o essencial, uma leitura cultural do lugar, e os links de reserva no momento exato em que são necessários.</p>`;
+ <p class="lede">Organizado em capítulos. Blocos amarelos marcam atualizações recentes das conversas com os hotéis.</p>`;
  chapters.forEach(ch=>{
   const days=roteiro.filter(r=>r.ch===ch.id);
   if(!days.length)return;
   html+=`<div class="chapter ${ch.cls}"><span class="glyph">${ch.glyph}</span><h3>${ch.title}</h3><span class="dates">${ch.dates}</span></div>
   <p class="chapter-note">${ch.note}</p>`;
   days.forEach(r=>{
+   const stampLabel={ok:'ok',new:'novo',att:'atenção',wait:'aguardando'}[r.stamp]||r.stamp;
    html+=`<div class="day ${r.cls}" id="day-${r.d.replace('/','')}">
     <div class="dcol"><div class="ddate">${r.d}</div><div class="dweek">${r.w}</div></div>
     <div class="dbody">
-     <div class="dcity">${r.city}${r.stamp?`<span class="stamp ${r.stamp}">${r.stamp==='ok'?'ok':r.stamp==='new'?'novo':'atenção'}</span>`:''}</div>
+     <div class="dcity">${r.city}${r.stamp?`<span class="stamp ${r.stamp}">${stampLabel}</span>`:''}</div>
      <div class="dprog">${r.prog}</div>
      ${r.tip?`<div class="dtip"><span class="ic">✦</span>${r.tip}</div>`:''}
+     ${r.update?`<div class="dupdate"><b>Atualização:</b> ${r.update}</div>`:''}
      ${r.extra?`<div class="dextra"><b>Se sobrar tempo:</b> ${r.extra}</div>`:''}
-     ${r.links?`<div class="dlinks">${r.links.map(l=>`<a class="blink" href="${l.u}" target="_blank" rel="noopener">↗ ${l.t}</a>`).join('')}</div>`:''}
+     ${r.links?`<div class="dlinks">${r.links.map(l=>`<a class="blink${l.t.startsWith('✓')?' done':''}" href="${l.u}" target="_blank" rel="noopener">${l.t.startsWith('✓')?'':'↗ '}${l.t}</a>`).join('')}</div>`:''}
      ${r.map?`<div class="dmaps">${r.map.map(m=>`<div class="dmap"><div class="ml">${m.n}</div><iframe src="https://maps.google.com/maps?q=${encodeURIComponent(m.q)}&z=13&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>`).join('')}</div>`:''}
     </div></div>`;
   });
@@ -615,8 +630,8 @@ function renderRoteiro(){
 }
 
 function renderHoteis(){return `
- <div class="kicker">Curadoria</div><h2>Onde dormir — e por quê</h2>
- <p class="lede">Cinco bases, cada uma escolhida por uma razão que vai além do preço: o butler que resolve seus ingressos, o teleférico na porta, o bairro que conecta os dois aeroportos. Preços são referência de pesquisa — confirme na reserva. Dica de compra: para os hotéis DA CHINA, compare sempre com o Trip.com antes de fechar — inventário e preço de hotéis chineses costumam ser melhores lá que no Booking, e o suporte deles resolve direto com a propriedade em chinês.</p>
+ <div class="kicker">Curadoria</div><h2>Onde dormir — e o status de cada um</h2>
+ <p class="lede">Os 5 hotéis estão todos reservados e pagos. Os blocos amarelos mostram o que mudou nas conversas via WhatsApp/Booking com cada um.</p>
  ${hoteis.map(h=>`
  <div class="hotel">
   <div>
@@ -626,9 +641,10 @@ function renderHoteis(){return `
    <div class="hmeta">${h.meta}</div>
   </div>
   <div class="hprice"><div class="v">${h.price}</div><div class="per">${h.per}</div>
-   <div style="margin-top:12px"><a class="blink" href="${h.link}" target="_blank" rel="noopener">↗ reservar</a></div>
+   <div style="margin-top:12px"><a class="blink" href="${h.link}" target="_blank" rel="noopener">↗ ver reserva</a></div>
   </div>
-  <div class="halt">${h.alt}</div>
+  ${h.update?`<div class="hupdate"><b>Atualização:</b> ${h.update}</div>`:''}
+  ${h.alt?`<div class="halt">${h.alt}</div>`:''}
  </div>`).join('')}`;}
 
 function buildMonth(y,m,fw){const dim=new Date(y,m+1,0).getDate();const c=[];for(let i=0;i<fw;i++)c.push(null);for(let d=1;d<=dim;d++)c.push(d);while(c.length%7)c.push(null);return c;}
@@ -670,12 +686,12 @@ function renderOrcamento(){
  const maxA=Math.max(...orcamento.lancado.map(x=>x[1]));
  const maxB=Math.max(...orcamento.faltando.map(x=>x[1]));
  return `<div class="kicker">Dinheiro</div><h2>Orçamento</h2>
- <p class="lede">2 pessoas. Bloco A: comprado ou estimado com base fechada. Bloco B: o que ainda vai sair do bolso na viagem.</p>
- <h3 style="font-size:14px;margin-bottom:12px">A — voos e hotéis</h3>
+ <p class="lede">2 pessoas. Bloco A: já pago e confirmado. Bloco B: o que ainda falta comprar, com valores reais das negociações onde já existem, estimativas onde ainda não.</p>
+ <h3 style="font-size:14px;margin-bottom:12px">A — pago e confirmado</h3>
  ${orcamento.lancado.map(([l,v])=>`<div class="bar-row"><div class="bar-lb">${l}</div><div class="bar-tk"><div class="bar-fl" style="width:${(v/maxA*100).toFixed(0)}%"></div></div><div class="bar-vl">R$ ${fmt(v)}</div></div>`).join('')}
- <h3 style="font-size:14px;margin:26px 0 12px">B — ingressos, comida e locomoção</h3>
+ <h3 style="font-size:14px;margin:26px 0 12px">B — ainda falta comprar</h3>
  ${orcamento.faltando.map(([l,v])=>`<div class="bar-row"><div class="bar-lb">${l}</div><div class="bar-tk"><div class="bar-fl" style="width:${(v/maxB*100).toFixed(0)}%;background:var(--china)"></div></div><div class="bar-vl">R$ ${fmt(v)}</div></div>`).join('')}
- <div class="saving">↓ Economias embutidas na revisão: hotéis de Zhangjiajie realistas (−R$ 190 vs estimativa anterior), Shenzhen 4★ Futian (−R$ 1.400 vs Hilton), Tóquio lado leste (−R$ 550) e Keisei Skyliner no lugar do Narita Express (−R$ 140). Seguro: R$ 0 — coberto pelo Visa.</div>
+ <div class="saving">↑ Custo novo que não estava no orçamento original: táxi do aeroporto em Tóquio (~R$500), já que o Belmont não oferece transfer — descoberto só na negociação via WhatsApp. Custo evitado em Pequim: usar DiDi em vez do transfer do hotel (450 CNY) deve sair mais barato.</div>
  <div class="total-banner">
   <div><div class="tl">Total geral</div><div class="tv">R$ ${fmt(subtA+subtB)}</div></div>
   <div><div class="tl">Por pessoa</div><div class="tv">R$ ${fmt((subtA+subtB)/2)}</div></div>
@@ -756,5 +772,4 @@ function initMap(){
 
 showTab('overview');
 </script>
-</body>
-</html>
+</body></html>
